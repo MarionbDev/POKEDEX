@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function MyImage({ pokemon }) {
   return (
     <figure>
@@ -10,5 +12,12 @@ function MyImage({ pokemon }) {
     </figure>
   );
 }
+
+MyImage.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
+  }),
+};
 
 export default MyImage;
