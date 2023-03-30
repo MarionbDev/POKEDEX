@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+
 function MyNavBar({ setpokemonIndex, pokemonIndex, pokemonList }) {
+  useEffect(() => {
+    if (pokemonList[pokemonIndex].name === "pikachu") {
+      alert("pika pikachu !!!");
+    }
+  }, [pokemonIndex]);
+
   const PrecedentHandeleClick = () => {
     setpokemonIndex((precedentState) => precedentState - 1);
   };

@@ -29,6 +29,8 @@ const pokemonList = [
   },
 ];
 
+alert("hello pokemon trainer :)");
+
 function App() {
   const [pokemonIndex, setpokemonIndex] = useState(0);
 
