@@ -1,23 +1,27 @@
 function MyNavBar({ setpokemonIndex, pokemonIndex, pokemonList }) {
-  const PrecedentHandeleClick = () => {
-    setpokemonIndex((precedentState) => precedentState - 1);
-  };
+  // const handleButtonClick = () => {
+  //   setpokemonIndex((precedentState) => precedentState - 1);
+  // };
 
-  const SuivantHandeleClick = () => {
-    setpokemonIndex((suivantState) => suivantState + 1);
+  // const andleButtonClick = () => {
+  //   setpokemonIndex((suivantState) => suivantState + 1);
+  // };
+
+  const handleButtonClick = (positionPoke) => {
+    setpokemonIndex(positionPoke);
   };
 
   return (
     <div>
-      {pokemonIndex > 0 && (
-        <button onClick={PrecedentHandeleClick}>{"Précédent"}</button>
-      )}
-
-      {pokemonIndex < pokemonList.length - 1 && (
-        <button onClick={SuivantHandeleClick}>{"Suivant"}</button>
-      )}
+      {pokemonList.map((pokemon, positionPoke) => (
+        <button
+          key={positionPoke}
+          onClick={() => handleButtonClick(positionPoke)}
+        >
+          {pokemon.name}
+        </button>
+      ))}
     </div>
   );
 }
-
 export default MyNavBar;
